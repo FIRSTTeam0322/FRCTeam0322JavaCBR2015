@@ -16,6 +16,7 @@ import org.usfirst.frc322.FRCTeam0322JavaCBR2015.commands.*;
 import edu.wpi.first.wpilibj.*;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
+import org.usfirst.frc322.FRCTeam0322JavaCBR2015.subsystems.ChassisSensors;
 
 
 /**
@@ -46,7 +47,9 @@ public class Chassis extends Subsystem {
     }
     
     public void driveWithJoystick(Joystick driveStick){
-    	robotDrive41.arcadeDrive(driveStick);
+    	//robotDrive41.arcadeDrive(driveStick);
+    	robotDrive41.mecanumDrive_Cartesian(driveStick.getX(), driveStick.getY(), driveStick.getZ(),
+    											RobotMap.chassisSensorsGyro1.getAngle());
     }
 }
 
