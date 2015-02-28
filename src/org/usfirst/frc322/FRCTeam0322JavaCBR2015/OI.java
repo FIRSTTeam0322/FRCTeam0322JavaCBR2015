@@ -13,6 +13,8 @@ package org.usfirst.frc322.FRCTeam0322JavaCBR2015;
 
 import org.usfirst.frc322.FRCTeam0322JavaCBR2015.commands.*;
 import org.usfirst.frc322.FRCTeam0322JavaCBR2015.RobotMap;
+
+import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj.*;
 
