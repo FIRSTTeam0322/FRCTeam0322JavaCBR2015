@@ -89,7 +89,7 @@ public class RobotMap {
         
         chassisRobotDrive41.setInvertedMotor(MotorType.kRearLeft, false);
         chassisRobotDrive41.setInvertedMotor(MotorType.kFrontLeft, false);
-        chassisRobotDrive41.setInvertedMotor(MotorType.kRearRight, false);
+        chassisRobotDrive41.setInvertedMotor(MotorType.kRearRight, true);
         chassisRobotDrive41.setInvertedMotor(MotorType.kFrontRight, true);
     }
 }
