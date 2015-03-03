@@ -12,7 +12,8 @@ public class WheelsIn extends Command {
     public WheelsIn() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
-    	requires(Robot.arms);
+    	requires(Robot.rightArm);
+    	requires(Robot.leftArm);
     }
 
     // Called just before this Command runs the first time
@@ -21,8 +22,8 @@ public class WheelsIn extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.arms.leftWheelControl(1.0);
-    	Robot.arms.rightWheelControl(-1.0);
+    	Robot.leftArm.leftWheelControl(1.0);
+    	Robot.rightArm.rightWheelControl(-1.0);
     }
 
     // Make this return true when this Command no longer needs to run execute()
@@ -32,8 +33,8 @@ public class WheelsIn extends Command {
 
     // Called once after isFinished returns true
     protected void end() {
-    	Robot.arms.leftWheelControl(0.0);
-    	Robot.arms.rightWheelControl(0.0);
+    	Robot.leftArm.leftWheelControl(0.0);
+    	Robot.rightArm.rightWheelControl(0.0);
     }
 
     // Called when another command which requires one or more of the same
