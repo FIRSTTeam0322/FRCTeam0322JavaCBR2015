@@ -13,6 +13,7 @@ hs_err_pid*
 
 #Project Specific Ignores
 /Debug/
+/bin/
 
 # Windows image file caches
 Thumbs.db
