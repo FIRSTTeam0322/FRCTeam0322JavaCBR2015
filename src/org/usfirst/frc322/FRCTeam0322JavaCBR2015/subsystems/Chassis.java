@@ -16,7 +16,6 @@ import org.usfirst.frc322.FRCTeam0322JavaCBR2015.commands.*;
 import edu.wpi.first.wpilibj.*;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
-import org.usfirst.frc322.FRCTeam0322JavaCBR2015.subsystems.ChassisSensors;
 
 
 /**
@@ -53,4 +52,3 @@ public class Chassis extends Subsystem {
     										RobotMap.chassisSensorsGyro1.getAngle());
     }
 }
-
