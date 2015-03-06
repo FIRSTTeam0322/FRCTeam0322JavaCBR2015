@@ -76,10 +76,10 @@ public class RobotMap {
         LiveWindow.addActuator("RightArm", "RightArmRotator", (Talon) rightArmRotator);
         
         leftArmWheel = new Talon(6);
-        LiveWindow.addActuator("LeftArm", "LeftArmWheel", (Talon) leftArmWheel);
+        LiveWindow.addActuator("LeftArmWheel", "LeftArmWheel", (Talon) leftArmWheel);
         
         rightArmWheel = new Talon(7);
-        LiveWindow.addActuator("RightArm", "RightArmWheel", (Talon) rightArmWheel);
+        LiveWindow.addActuator("RightArmWheel", "RightArmWheel", (Talon) rightArmWheel);
         
         liftLiftMotor = new Victor(8);
         LiveWindow.addActuator("Lift", "LiftMotor", (Victor) liftLiftMotor);

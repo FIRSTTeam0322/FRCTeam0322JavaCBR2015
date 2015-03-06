@@ -6,21 +6,20 @@ import edu.wpi.first.wpilibj.*;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
 
+
 /**
  *
  */
-public class LeftArm extends Subsystem {
-    SpeedController leftArmRotator = RobotMap.leftArmRotator;
+public class LeftArmWheel extends Subsystem {
+    SpeedController leftArmWheel = RobotMap.leftArmWheel;
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
 
     public void initDefaultCommand() {
         // Set the default command for a subsystem here.
         //setDefaultCommand(new MySpecialCommand());
-    	setDefaultCommand(new ArmActuator());
     }
-    
-	public void leftArmControl(double speed) {
-		leftArmRotator.set(speed);
+	public void leftWheelControl(double speed) {
+		leftArmWheel.set(speed);
 	}
 }
