@@ -12,8 +12,8 @@ public class WheelsIn extends Command {
     public WheelsIn() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
-    	requires(Robot.rightArm);
     	requires(Robot.leftArm);
+    	requires(Robot.rightArm);
     }
 
     // Called just before this Command runs the first time
