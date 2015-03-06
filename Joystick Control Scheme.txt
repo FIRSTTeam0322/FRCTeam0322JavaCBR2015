@@ -1,0 +1,20 @@
+DRIVE_STICK
+RobotDrive = X-Axis, Y-Axis, & Z-Axis (Mechanum Drive)
+
+*Brake Control = Button 1 (Trigger)
+
+
+MANIPULATOR_STICK
+Left Stick X-Axis = Left Arm Movement
+Right Stick X-Axis = Right Arm Movement
+
+Button 1 = Raise Lift
+Button 3 = Lower Lift
+
+Button 2 = Wheels In
+Button 4 = Wheels Out
+
+Button 7 [L1] = Wheels Clockwise
+Button 8 [R1] = Wheels Counter-Clockwise 
+
+* = Not Implemented

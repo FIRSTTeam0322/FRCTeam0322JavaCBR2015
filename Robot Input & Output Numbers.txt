@@ -1,0 +1,36 @@
+CHASSIS
+frontLeftMotor = PWM 0
+rearLeftMotor = PWM 1
+frontRightMotor = PWM 2
+rearRightMotor = PWM 3
+
+*leftFrontBrake = Digital I/O 0
+*leftRearBrake = Digital I/O 1
+*rightFrontBrake = Digital I/O 2
+*rightRearBrake = Digital I/O 3
+
+*CHASSIS_SENSORS
+*frontLeftEncoder = Digital I/O 4,5
+*rearLeftEncoder = Digital I/O 6,7
+*frontRightEncoder = Digital I/O 8,9
+*rearRightEncoder = Digital I/O 10,11
+
+Gyroscope = Analog,0
+Accelerometer = Built In
+
+LEFT_ARM
+leftArmRotator = PWM 4
+
+LEFT_ARM_WHEEL
+leftArmWheel = PWM 6
+
+LIFT
+lift = PWM 8
+
+RIGHT_ARM
+rightArmRotator = PWM 5
+
+LEFT_ARM_WHEEL
+rightArmWheel = PWM 7
+
+* = Not Implemented
