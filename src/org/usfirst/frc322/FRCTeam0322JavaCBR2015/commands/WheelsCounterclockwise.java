@@ -7,9 +7,9 @@ import edu.wpi.first.wpilibj.command.Command;
 /**
  *
  */
-public class WheelsCounterclockwise extends Command {
+public class WheelsCounterClockwise extends Command {
 
-    public WheelsCounterclockwise() {
+    public WheelsCounterClockwise() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
     	requires(Robot.leftArmWheel);
