@@ -28,6 +28,10 @@ public class RobotMap {
     public static SpeedController chassisRearLeftMotor;
     public static SpeedController chassisFrontRightMotor;
     public static SpeedController chassisRearRightMotor;
+    public static DigitalOutput chassisFrontLeftBrake;
+    public static DigitalOutput chassisRearLeftBrake;
+    public static DigitalOutput chassisFrontRightBrake;
+    public static DigitalOutput chassisRearRightBrake;
     public static RobotDrive chassisRobotDrive41;
     public static Gyro chassisSensorsGyro1;
     public static BuiltInAccelerometer chassisSensorsAccel1;
@@ -68,6 +72,11 @@ public class RobotMap {
         chassisRobotDrive41.setInvertedMotor(MotorType.kFrontLeft, false);
         chassisRobotDrive41.setInvertedMotor(MotorType.kRearRight, true);
         chassisRobotDrive41.setInvertedMotor(MotorType.kFrontRight, true);
+        
+        chassisFrontLeftBrake = new DigitalOutput(0);
+        chassisRearLeftBrake = new DigitalOutput(1);
+        chassisFrontRightBrake = new DigitalOutput(2);
+        chassisRearRightBrake = new DigitalOutput(3);
 
         chassisSensorsGyro1 = new Gyro(0);
         LiveWindow.addSensor("Chassis Sensors", "Gyro 1", chassisSensorsGyro1);
