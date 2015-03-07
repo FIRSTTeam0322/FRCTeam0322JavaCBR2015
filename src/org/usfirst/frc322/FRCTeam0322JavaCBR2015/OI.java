@@ -60,7 +60,7 @@ public class OI {
     public JoystickButton wheelsInButtonAlt;
     public JoystickButton wheelsOutButtonAlt;
     public JoystickButton wheelsClockwiseButton;
-    public JoystickButton wheelsCounterclockwiseButton;
+    public JoystickButton wheelsCounterClockwiseButton;
 
     public OI() {
         driveStick = new ThrustmasterJoystick(0);
@@ -86,15 +86,23 @@ public class OI {
         
         wheelsClockwiseButton = new JoystickButton(manipulatorStick, 8);
         wheelsClockwiseButton.whileHeld(new WheelsClockwise());
-        wheelsCounterclockwiseButton = new JoystickButton(manipulatorStick, 7);
-        wheelsCounterclockwiseButton.whileHeld(new WheelsCounterclockwise());
+        wheelsCounterClockwiseButton = new JoystickButton(manipulatorStick, 7);
+        wheelsCounterClockwiseButton.whileHeld(new WheelsCounterClockwise());
 
         // SmartDashboard Buttons
-        SmartDashboard.putData("Autonomous Command", new AutonomousCommand());
+        SmartDashboard.putData("AutonMoveForward", new AutonMoveForward());
 
-        SmartDashboard.putData("LiftUp", new LiftUp());
+        SmartDashboard.putData("Lift Up", new LiftUp());
 
-        SmartDashboard.putData("LiftDown", new LiftDown());
+        SmartDashboard.putData("Lift Down", new LiftDown());
+        
+        SmartDashboard.putData("Wheels In", new WheelsIn());
+
+        SmartDashboard.putData("Wheels Out", new WheelsOut());
+        
+        SmartDashboard.putData("Wheels Clockwise", new WheelsClockwise());
+        
+        SmartDashboard.putData("Wheels Counter-Clockwise", new WheelsCounterClockwise());
 
         SmartDashboard.putData("BrakeControlSystem", new BrakeControlSystem());
     }

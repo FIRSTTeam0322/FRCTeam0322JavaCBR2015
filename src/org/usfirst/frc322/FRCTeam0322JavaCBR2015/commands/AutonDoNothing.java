@@ -1,22 +1,19 @@
 package org.usfirst.frc322.FRCTeam0322JavaCBR2015.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
-import org.usfirst.frc322.FRCTeam0322JavaCBR2015.Robot;
 
 /**
  *
  */
-public class AutonMoveForward extends Command {
+public class AutonDoNothing extends Command {
 
-    public AutonMoveForward() {
+    public AutonDoNothing() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
-    	requires(Robot.chassis);
     }
 
-    public AutonMoveForward(double timeout) {
-    	super(timeout);
-    	requires(Robot.chassis);
+    public AutonDoNothing(double timeout) {
+		super(timeout);
 	}
 
 	// Called just before this Command runs the first time
@@ -25,8 +22,6 @@ public class AutonMoveForward extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.chassis.autoDriveSystem(0.75, 0.0, 0.0);
-    		
     }
 
     // Make this return true when this Command no longer needs to run execute()
@@ -39,7 +34,6 @@ public class AutonMoveForward extends Command {
 
     // Called once after isFinished returns true
     protected void end() {
-    	Robot.chassis.autoDriveSystem(0.0, 0.0, 0.0);
     }
 
     // Called when another command which requires one or more of the same

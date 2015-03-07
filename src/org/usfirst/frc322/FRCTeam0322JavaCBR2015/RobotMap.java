@@ -24,25 +24,42 @@ import java.util.Vector;
  * floating around.
  */
 public class RobotMap {
+	public static DigitalInput autonomusModeSwitchesSwitch1;
+	public static DigitalInput autonomusModeSwitchesSwitch2;
+	public static DigitalInput autonomusModeSwitchesSwitch3;
+	public static DigitalInput autonomusModeSwitchesSwitch4;
     public static SpeedController chassisFrontLeftMotor;
     public static SpeedController chassisRearLeftMotor;
     public static SpeedController chassisFrontRightMotor;
     public static SpeedController chassisRearRightMotor;
     public static RobotDrive chassisRobotDrive41;
+    public static DigitalOutput chassisFrontLeftBrake;
+    public static DigitalOutput chassisRearLeftBrake;
+    public static DigitalOutput chassisFrontRightBrake;
+    public static DigitalOutput chassisRearRightBrake;
     public static Gyro chassisSensorsGyro1;
     public static BuiltInAccelerometer chassisSensorsAccel1;
+    public static Encoder chassisSensorsFrontLeftEncoder;
+    public static Encoder chassisSensorsRearLeftEncoder;
+    public static Encoder chassisSensorsFrontRightEncoder;
+    public static Encoder chassisSensorsRearRightEncoder;
     public static SpeedController leftArmRotator;
     public static SpeedController rightArmRotator;
     public static SpeedController leftArmWheel;
     public static SpeedController rightArmWheel;
     public static SpeedController liftLiftMotor;
-    
+    public static CameraServer cameraServer;
+
     public static int DRIVENUMAXIS = 4;
     public static int DRIVENUMBUTTONS = 16;
     public static int MANIPULATORNUMAXIS = 5;
     public static int MANIPULATORNUMBUTTONS = 12;
 
     public static void init() {
+    	autonomusModeSwitchesSwitch1 = new DigitalInput(0);
+    	autonomusModeSwitchesSwitch2 = new DigitalInput(1);
+    	autonomusModeSwitchesSwitch3 = new DigitalInput(2);
+    	autonomusModeSwitchesSwitch4 = new DigitalInput(3);
         chassisFrontLeftMotor = new Talon(0);
         LiveWindow.addActuator("Chassis", "FrontLeftMotor", (Talon) chassisFrontLeftMotor);
         
@@ -67,6 +84,11 @@ public class RobotMap {
         chassisRobotDrive41.setInvertedMotor(MotorType.kFrontLeft, false);
         chassisRobotDrive41.setInvertedMotor(MotorType.kRearRight, true);
         chassisRobotDrive41.setInvertedMotor(MotorType.kFrontRight, true);
+        
+        chassisFrontLeftBrake = new DigitalOutput(12);
+        chassisRearLeftBrake = new DigitalOutput(13);
+        chassisFrontRightBrake = new DigitalOutput(14);
+        chassisRearRightBrake = new DigitalOutput(15);
 
         chassisSensorsGyro1 = new Gyro(0);
         LiveWindow.addSensor("Chassis Sensors", "Gyro 1", chassisSensorsGyro1);
@@ -74,6 +96,15 @@ public class RobotMap {
         
         chassisSensorsAccel1 = new BuiltInAccelerometer();
         LiveWindow.addSensor("Chassis Sensors", "Accel 1", chassisSensorsAccel1);
+        
+        chassisSensorsFrontLeftEncoder = new Encoder(4, 5, false);
+        LiveWindow.addSensor("Chassis Sensors", "Front Left Encoder", chassisSensorsFrontLeftEncoder);
+        chassisSensorsRearLeftEncoder = new Encoder(6, 7, false);
+        LiveWindow.addSensor("Chassis Sensors", "Rear Left Encoder", chassisSensorsRearLeftEncoder);
+        chassisSensorsFrontRightEncoder = new Encoder(8, 9, true);
+        LiveWindow.addSensor("Chassis Sensors", "Front Right Encoder", chassisSensorsFrontRightEncoder);
+        chassisSensorsRearRightEncoder = new Encoder(10, 11, true);
+        LiveWindow.addSensor("Chassis Sensors", "Rear Right Encoder", chassisSensorsRearRightEncoder);
         
         leftArmRotator = new Talon(4);
         LiveWindow.addActuator("LeftArm", "LeftArmRotator", (Talon) leftArmRotator);
@@ -90,6 +121,8 @@ public class RobotMap {
         liftLiftMotor = new Victor(8);
         LiveWindow.addActuator("Lift", "LiftMotor", (Victor) liftLiftMotor);
         
-
+        cameraServer = CameraServer.getInstance();
+        cameraServer.setQuality(50);
+        cameraServer.startAutomaticCapture("cam0");
     }
 }
