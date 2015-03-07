@@ -28,13 +28,17 @@ public class RobotMap {
     public static SpeedController chassisRearLeftMotor;
     public static SpeedController chassisFrontRightMotor;
     public static SpeedController chassisRearRightMotor;
+    public static RobotDrive chassisRobotDrive41;
     public static DigitalOutput chassisFrontLeftBrake;
     public static DigitalOutput chassisRearLeftBrake;
     public static DigitalOutput chassisFrontRightBrake;
     public static DigitalOutput chassisRearRightBrake;
-    public static RobotDrive chassisRobotDrive41;
     public static Gyro chassisSensorsGyro1;
     public static BuiltInAccelerometer chassisSensorsAccel1;
+    public static Encoder chassisSensorsFrontLeftEncoder;
+    public static Encoder chassisSensorsRearLeftEncoder;
+    public static Encoder chassisSensorsFrontRightEncoder;
+    public static Encoder chassisSensorsRearRightEncoder;
     public static SpeedController leftArmRotator;
     public static SpeedController rightArmRotator;
     public static SpeedController leftArmWheel;
@@ -84,6 +88,15 @@ public class RobotMap {
         
         chassisSensorsAccel1 = new BuiltInAccelerometer();
         LiveWindow.addSensor("Chassis Sensors", "Accel 1", chassisSensorsAccel1);
+        
+        chassisSensorsFrontLeftEncoder = new Encoder(4, 5, false);
+        LiveWindow.addSensor("Chassis Sensors", "Front Left Encoder", chassisSensorsFrontLeftEncoder);
+        chassisSensorsRearLeftEncoder = new Encoder(6, 7, false);
+        LiveWindow.addSensor("Chassis Sensors", "Rear Left Encoder", chassisSensorsRearLeftEncoder);
+        chassisSensorsFrontRightEncoder = new Encoder(8, 9, true);
+        LiveWindow.addSensor("Chassis Sensors", "Front Right Encoder", chassisSensorsFrontRightEncoder);
+        chassisSensorsRearRightEncoder = new Encoder(10, 11, true);
+        LiveWindow.addSensor("Chassis Sensors", "Rear Right Encoder", chassisSensorsRearRightEncoder);
         
         leftArmRotator = new Talon(4);
         LiveWindow.addActuator("LeftArm", "LeftArmRotator", (Talon) leftArmRotator);
