@@ -30,6 +30,7 @@ public class Robot extends IterativeRobot {
     Command autonomousCommand;
 
     public static OI oi;
+    public static AutonomusModeSwitches autonomusModeSwitches;
     public static Chassis chassis;
     public static LeftArm leftArm;
     public static RightArm rightArm;
@@ -43,6 +44,7 @@ public class Robot extends IterativeRobot {
      */
     public void robotInit() {
     	RobotMap.init();
+    	autonomusModeSwitches = new AutonomusModeSwitches();
         chassis = new Chassis();
         leftArm = new LeftArm();
         rightArm = new RightArm();

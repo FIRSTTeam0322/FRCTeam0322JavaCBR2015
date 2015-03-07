@@ -3,18 +3,20 @@ package org.usfirst.frc322.FRCTeam0322JavaCBR2015.commands;
 import edu.wpi.first.wpilibj.command.Command;
 
 import org.usfirst.frc322.FRCTeam0322JavaCBR2015.RobotMap;
+import org.usfirst.frc322.FRCTeam0322JavaCBR2015.Robot;
 
 /**
  *
  */
 public class AutonSelector extends Command {
 
-	int mode = 0;
+	int mode;
 	Command autonCommand = null;
 	
     public AutonSelector() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
+    	requires(Robot.autonomusModeSwitches);
     }
 
     // Called just before this Command runs the first time
@@ -23,7 +25,7 @@ public class AutonSelector extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	mode = RobotMap.autoMode;
+    	mode = Robot.autonomusModeSwitches.GetMode();
     	switch(mode)
     	{
     		case 0:
