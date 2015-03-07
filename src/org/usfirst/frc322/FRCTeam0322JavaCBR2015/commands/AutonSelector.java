@@ -1,50 +1,57 @@
 package org.usfirst.frc322.FRCTeam0322JavaCBR2015.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
-import org.usfirst.frc322.FRCTeam0322JavaCBR2015.Robot;
+
+import org.usfirst.frc322.FRCTeam0322JavaCBR2015.RobotMap;
 
 /**
  *
  */
-public class AutonMoveForward extends Command {
+public class AutonSelector extends Command {
 
-    public AutonMoveForward() {
+	int mode = 0;
+	Command autonCommand = null;
+	
+    public AutonSelector() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
-    	requires(Robot.chassis);
     }
 
-    public AutonMoveForward(double timeout) {
-    	super(timeout);
-    	requires(Robot.chassis);
-	}
-
-	// Called just before this Command runs the first time
+    // Called just before this Command runs the first time
     protected void initialize() {
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.chassis.autoDriveSystem(0.75, 0.0, 0.0);
+    	mode = RobotMap.autoMode;
+    	switch(mode)
+    	{
+    		case 0:
+    			autonCommand = new AutonDoNothing(15.0);
+    			break;
+    			
+    		case 1:
+    			autonCommand = new AutonMoveForward(5.0);
+    			break;
     		
+    		default:
+    			autonCommand = new AutonDoNothing();
+    			return;
+    	}
+    	autonCommand.start();
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-    	if (this.isTimedOut())
-    		return true;
-    	else
-    		return false;
+        return false;
     }
 
     // Called once after isFinished returns true
     protected void end() {
-    	Robot.chassis.autoDriveSystem(0.0, 0.0, 0.0);
     }
 
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     protected void interrupted() {
-    	end();
     }
 }

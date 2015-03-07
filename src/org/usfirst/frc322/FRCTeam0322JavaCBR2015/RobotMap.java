@@ -50,6 +50,8 @@ public class RobotMap {
     public static int DRIVENUMBUTTONS = 16;
     public static int MANIPULATORNUMAXIS = 5;
     public static int MANIPULATORNUMBUTTONS = 12;
+    
+    public static int autoMode = 0;
 
     public static void init() {
         chassisFrontLeftMotor = new Talon(0);

@@ -42,7 +42,7 @@ public class Robot extends IterativeRobot {
      * used for any initialization code.
      */
     public void robotInit() {
-    RobotMap.init();
+    	RobotMap.init();
         chassis = new Chassis();
         leftArm = new LeftArm();
         rightArm = new RightArm();
@@ -57,7 +57,7 @@ public class Robot extends IterativeRobot {
         oi = new OI();
 
         // instantiate the command used for the autonomous period
-        
+        autonomousCommand = new AutonSelector();        
     }
 
     /**
