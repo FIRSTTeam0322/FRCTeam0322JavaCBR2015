@@ -36,6 +36,7 @@ public class RobotMap {
     public static SpeedController leftArmWheel;
     public static SpeedController rightArmWheel;
     public static SpeedController liftLiftMotor;
+    public static CameraServer cameraServer;
     
     public static int DRIVENUMAXIS = 4;
     public static int DRIVENUMBUTTONS = 16;
@@ -90,6 +91,8 @@ public class RobotMap {
         liftLiftMotor = new Victor(8);
         LiveWindow.addActuator("Lift", "LiftMotor", (Victor) liftLiftMotor);
         
-
+        cameraServer = CameraServer.getInstance();
+        cameraServer.setQuality(50);
+        cameraServer.startAutomaticCapture("cam0");
     }
 }
