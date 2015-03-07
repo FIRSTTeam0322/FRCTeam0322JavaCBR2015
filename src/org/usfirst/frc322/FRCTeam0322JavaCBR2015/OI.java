@@ -57,6 +57,8 @@ public class OI {
     public JoystickButton liftDownButton;
     public JoystickButton wheelsInButton;
     public JoystickButton wheelsOutButton;
+    public JoystickButton wheelsInButtonAlt;
+    public JoystickButton wheelsOutButtonAlt;
     public JoystickButton wheelsClockwiseButton;
     public JoystickButton wheelsCounterclockwiseButton;
 
@@ -77,9 +79,14 @@ public class OI {
         wheelsOutButton = new JoystickButton(manipulatorStick, 4);
         wheelsOutButton.whileHeld(new WheelsOut());
 
-        wheelsClockwiseButton = new JoystickButton(manipulatorStick, 7);
+        wheelsInButtonAlt = new JoystickButton(manipulatorStick, 5);
+        wheelsInButtonAlt.whileHeld(new WheelsIn());
+        wheelsOutButtonAlt = new JoystickButton(manipulatorStick, 6);
+        wheelsOutButtonAlt.whileHeld(new WheelsOut());
+        
+        wheelsClockwiseButton = new JoystickButton(manipulatorStick, 8);
         wheelsClockwiseButton.whileHeld(new WheelsClockwise());
-        wheelsCounterclockwiseButton = new JoystickButton(manipulatorStick, 8);
+        wheelsCounterclockwiseButton = new JoystickButton(manipulatorStick, 7);
         wheelsCounterclockwiseButton.whileHeld(new WheelsCounterclockwise());
 
         // SmartDashboard Buttons
