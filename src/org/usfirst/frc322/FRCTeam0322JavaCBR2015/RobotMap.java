@@ -47,7 +47,8 @@ public class RobotMap {
     public static SpeedController rightArmRotator;
     public static SpeedController leftArmWheel;
     public static SpeedController rightArmWheel;
-    public static SpeedController liftLiftMotor;
+    public static SpeedController liftLeftLiftMotor;
+    public static SpeedController liftRightLiftMotor;
     public static CameraServer cameraServer;
 
     public static int DRIVENUMAXIS = 4;
@@ -118,8 +119,10 @@ public class RobotMap {
         rightArmWheel = new Talon(7);
         LiveWindow.addActuator("RightArmWheel", "RightArmWheel", (Talon) rightArmWheel);
         
-        liftLiftMotor = new Victor(8);
-        LiveWindow.addActuator("Lift", "LiftMotor", (Victor) liftLiftMotor);
+        liftLeftLiftMotor = new Victor(8);
+        LiveWindow.addActuator("Lift", "LeftLiftMotor", (Victor) liftLeftLiftMotor);
+        liftRightLiftMotor = new Victor(9);
+        LiveWindow.addActuator("Lift", "RightLiftMotor", (Victor) liftRightLiftMotor);
         
         //cameraServer = CameraServer.getInstance();
         //cameraServer.setQuality(50);
