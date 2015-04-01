@@ -31,7 +31,8 @@ LEFT_ARM_WHEEL
 leftArmWheel = PWM 6
 
 LIFT
-lift = PWM 8
+leftLiftMotor = PWM 8
+leftLiftMotor = PWM 9
 
 RIGHT_ARM
 rightArmRotator = PWM 5
