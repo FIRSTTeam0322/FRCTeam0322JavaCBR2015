@@ -10,8 +10,8 @@ import edu.wpi.first.wpilibj.command.Subsystem;
  *
  */
 public class AutonomusModeSwitches extends Subsystem {
-    int autoMode = 0;
-    boolean manualAutoSet;
+    int autoMode = 1;
+    boolean manualAutoSet = true;
     DigitalInput switch1 = RobotMap.autonomusModeSwitchesSwitch1;
     DigitalInput switch2 = RobotMap.autonomusModeSwitchesSwitch2;
     DigitalInput switch3 = RobotMap.autonomusModeSwitchesSwitch3;

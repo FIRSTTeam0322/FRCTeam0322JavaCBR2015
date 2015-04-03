@@ -33,7 +33,7 @@ public class AutonSelector extends Command {
     			break;
     			
     		case 1:
-    			autonCommand = new AutonMoveForward(0.5);
+    			autonCommand = new AutonMoveForward(0.75);
     			break;
     		
     		default:
