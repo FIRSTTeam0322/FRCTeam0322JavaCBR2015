@@ -43,7 +43,7 @@ public class Lift extends Subsystem {
     
     public void liftControl(double speed) {
     	leftLiftMotor.set(speed);
-    	rightLiftMotor.set(-(speed));
+    	rightLiftMotor.set(speed);
     }
     
 }
