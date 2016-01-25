@@ -37,7 +37,7 @@ public class RobotMap {
     public static DigitalOutput chassisRearLeftBrake;
     public static DigitalOutput chassisFrontRightBrake;
     public static DigitalOutput chassisRearRightBrake;
-    public static Gyro chassisSensorsGyro1;
+    public static AnalogGyro chassisSensorsGyro1;
     public static BuiltInAccelerometer chassisSensorsAccel1;
     public static Encoder chassisSensorsFrontLeftEncoder;
     public static Encoder chassisSensorsRearLeftEncoder;
@@ -91,7 +91,7 @@ public class RobotMap {
         chassisFrontRightBrake = new DigitalOutput(14);
         chassisRearRightBrake = new DigitalOutput(15);
 
-        chassisSensorsGyro1 = new Gyro(0);
+        chassisSensorsGyro1 = new AnalogGyro(0);
         LiveWindow.addSensor("Chassis Sensors", "Gyro 1", chassisSensorsGyro1);
         chassisSensorsGyro1.setSensitivity(0.007);
         
