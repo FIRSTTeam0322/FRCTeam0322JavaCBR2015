@@ -124,8 +124,8 @@ public class RobotMap {
         liftRightLiftMotor = new Victor(9);
         LiveWindow.addActuator("Lift", "RightLiftMotor", (Victor) liftRightLiftMotor);
         
-        //cameraServer = CameraServer.getInstance();
-        //cameraServer.setQuality(50);
-        //cameraServer.startAutomaticCapture("cam0");
+        cameraServer = CameraServer.getInstance();
+        cameraServer.setQuality(50);
+        cameraServer.startAutomaticCapture("cam0");
     }
 }
